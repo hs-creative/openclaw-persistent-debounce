@@ -15,13 +15,15 @@
   "author": "Lisa Moretti",
   "license": "MIT",
   "openclaw": {
-    "extensions": ["./index.js"],
+    "extensions": [
+      "./index.js"
+    ],
     "compat": {
       "pluginApi": ">=2026.3.24-beta.2",
       "minGatewayVersion": "2026.3.24-beta.2"
     }
   },
   "dependencies": {
-    "better-sqlite3": "^11.0.0"
+    "better-sqlite3": "^11.10.0"
   }
 }

@@ -1,7 +1,7 @@
 import Database from "better-sqlite3";
 import { createHash } from "crypto";
-import { mkdirSync, dirname } from "fs";
-import { join } from "path";
+import { mkdirSync } from "fs";
+import { join, dirname } from "path";
 import { homedir } from "os";
 
 function sha256(input) {
