@@ -1,0 +1,27 @@
+{
+  "name": "openclaw-persistent-debounce",
+  "version": "1.0.0",
+  "description": "Persistent inbound debounce queue for OpenClaw — survives restarts without duplicate replies",
+  "type": "module",
+  "main": "index.js",
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "debounce",
+    "whatsapp",
+    "queue",
+    "sqlite"
+  ],
+  "author": "Lisa Moretti",
+  "license": "MIT",
+  "openclaw": {
+    "extensions": ["./index.js"],
+    "compat": {
+      "pluginApi": ">=2026.3.24-beta.2",
+      "minGatewayVersion": "2026.3.24-beta.2"
+    }
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  }
+}

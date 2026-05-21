@@ -1,0 +1,48 @@
+{
+  "id": "persistent-debounce",
+  "name": "Persistent Debounce",
+  "description": "SQLite-backed inbound debounce queue that survives gateway restarts without duplicate replies.",
+  "kind": "plugin",
+  "contracts": {
+    "tools": ["debounce_queue_status"]
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dbPath": {
+        "type": "string",
+        "description": "Path to SQLite database file. Defaults to ~/.openclaw/persistent-debounce.db"
+      },
+      "channels": {
+        "type": "object",
+        "description": "Per-channel debounce configuration. Key is channel name (e.g. whatsapp).",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "debounceMs": { "type": "number", "default": 60000 },
+            "accounts": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Account IDs to apply debounce to. Empty means all accounts."
+            }
+          }
+        }
+      },
+      "flushIntervalMs": {
+        "type": "number",
+        "default": 5000,
+        "description": "How often to check for messages ready to flush (milliseconds)"
+      },
+      "maxPendingAgeMs": {
+        "type": "number",
+        "default": 3600000,
+        "description": "Maximum age for pending messages before they are auto-flushed or discarded"
+      }
+    }
+  }
+}
