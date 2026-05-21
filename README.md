@@ -22,7 +22,7 @@ This plugin replaces the in-memory debounce with a **persistent SQLite queue** t
 
 ```bash
 # From a git repository
-openclaw plugins install git:github.com/your-org/openclaw-persistent-debounce@main
+openclaw plugins install git:github.com/hs-creative/openclaw-persistent-debounce@master
 
 # Or from a local path during development
 openclaw plugins install --link ./openclaw-persistent-debounce
@@ -85,7 +85,7 @@ Set the channel's `debounceMs` to `0` in OpenClaw config so this plugin owns the
 ### 5. Restart the gateway
 
 ```bash
-openclaw doctor --non-interactive
+openclaw doctor
 openclaw gateway restart
 ```
 
@@ -173,9 +173,10 @@ Agents can check queue status:
 ## Development
 
 ```bash
-git clone https://github.com/your-org/openclaw-persistent-debounce.git
+git clone https://github.com/hs-creative/openclaw-persistent-debounce.git
 cd openclaw-persistent-debounce
 npm install
+npm test
 
 # Local link install
 openclaw plugins install --link .

@@ -4,6 +4,9 @@
   "description": "Persistent inbound debounce queue for OpenClaw — survives restarts without duplicate replies",
   "type": "module",
   "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
   "keywords": [
     "openclaw",
     "openclaw-plugin",
